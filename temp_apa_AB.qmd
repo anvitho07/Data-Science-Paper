@@ -30,7 +30,7 @@ nondisclosure: false
 nondisclosuredate: "January 1, 2076"
 
 #bibliography: "literatur.bib"
-# csl: "https://www.zotero.org/styles/deutsche-gesellschaft-fur-psychologie"
+#csl: "https://www.zotero.org/styles/deutsche-gesellschaft-fur-psychologie"
 
 format:
     apaquarto-pdf:
@@ -62,8 +62,94 @@ lang: en
 \clearpage
 
 # Introduction
+## Introduction: Green Industrial Policies – Redefining Growth for a Sustainable Future
 
-Text Text Text Text Text Text Text Text Text Text Text Text Text
+As the global community faces intensifying climate change, environmental degradation, and socio-economic disruptions, the need for a new development paradigm has never been more urgent. Traditional models of industrialization, often centered around fossil fuel dependency and resource-intensive growth, are increasingly incompatible with the sustainability goals outlined in international agreements such as the Paris Climate Accord and the United Nations Sustainable Development Goals (UN SDGs) [@unfccc2015; @un2015]. In this context, **Green Industrial Policies (GIPs)** have gained prominence as a strategic framework to drive both environmental and economic transformation.
+
+Green Industrial Policies can be broadly defined as public sector interventions aimed at promoting structural change towards low-carbon, resource-efficient, and environmentally sustainable economic activities [@altenburg2017]. Unlike conventional industrial policies that focus primarily on productivity and competitiveness, GIPs intentionally embed ecological considerations into the design and execution of industrial development. They aim to foster green innovation, shift production toward cleaner technologies, and support sectors that contribute to environmental objectives such as emissions reduction, renewable energy, and circular economy models [@pegels2020]. Through such policies, governments seek to align economic growth with environmental sustainability, creating a pathway for inclusive and green development.
+
+The implementation of green industrial policies inevitably raises the question of the **state’s role in shaping economic and technological trajectories**. While markets are essential for resource allocation, they often fail to address environmental externalities and long-term sustainability goals due to their short-term profit orientation [@mazzucato2013]. This creates a compelling justification for state-led intervention. Governments are not merely passive regulators but active agents in creating and steering markets, fostering innovation, and coordinating between sectors and stakeholders to guide economies toward sustainability [@rodrik2004]. In the green transition, this role is even more critical, as emerging sectors often face high upfront costs, uncertain returns, and technological path dependencies that deter private investment without public support.
+
+To operationalize these goals, a diverse set of **policy instruments** is used within green industrial strategies. These instruments can be broadly categorized into supply-side measures, such as public investment in green R&D, subsidies for clean energy, and support for sustainable infrastructure; and demand-side measures, such as green public procurement, carbon pricing mechanisms, and consumer incentives [@altenburg2012]. Feed-in tariffs for renewable electricity, tax credits for electric vehicle purchases, and industrial standards for energy efficiency are common examples. Moreover, some governments adopt **mission-oriented approaches**, where specific environmental goals—such as phasing out internal combustion engines or achieving net-zero emissions by a certain date—are used to organize cross-sectoral innovation and investment [@mazzucato2021].
+
+Despite the promise of GIPs, their implementation is fraught with challenges. First, designing effective policies requires balancing environmental ambition with economic competitiveness—especially in carbon-intensive industries that may face disruption or decline [@meckling2015]. Second, institutional constraints such as limited administrative capacity, inter-agency coordination problems, and political resistance from entrenched interests can hinder policy success. Third, financing green transformation—especially in developing economies—requires significant public and private investment, which may not be readily available or evenly distributed [@schmitz2013]. There is also the risk of policy capture and greenwashing, where policies are designed to appear environmentally progressive without producing meaningful change [@newell2010]. Finally, the global dimension of the green transition introduces further complexity, such as the risk of carbon leakage and the need for international policy coherence.
+
+In sum, Green Industrial Policies represent a vital and ambitious effort to reshape the industrial foundations of modern economies. By integrating environmental sustainability into industrial development, GIPs offer a way to harmonize climate action with economic resilience. Yet their success depends on strategic governance, adaptive institutions, and the careful design of supportive and accountable policy instruments.
+
+## Why Green Industrial Policies Matter – Globally and Economically
+
+The growing urgency of the climate crisis, biodiversity loss, and unsustainable resource use has made the need for green transitions not just desirable but indispensable. **Green Industrial Policies (GIPs)** are critical because they offer a systemic approach to reshaping economic activity in ways that align with global sustainability goals. At a global level, GIPs are central to meeting the targets of the **Paris Agreement** and the **UN Sustainable Development Goals (SDGs)**, particularly those related to climate action, clean energy, sustainable industry, and responsible consumption [@unfccc2015; @un2015]. Without structural changes in production and industrial systems, it will be impossible to decouple economic growth from carbon emissions and ecological degradation.
+
+From a **global justice perspective**, green industrial policies also play a key role in addressing asymmetries between industrialized and developing countries. Many developing economies are simultaneously vulnerable to the impacts of climate change and constrained in their ability to adopt cleaner technologies due to limited financial and technological resources [@altenburg2017]. GIPs can offer a mechanism to promote technology transfer, build green capabilities, and support inclusive development pathways that avoid the environmental costs associated with traditional industrialization [@schmitz2013; @pegels2020].
+
+Economically, green industrial policies serve as a catalyst for **innovation-driven growth**. By targeting public support toward emerging sectors such as renewable energy, electric mobility, sustainable agriculture, and circular economy industries, GIPs stimulate private investment, create new markets, and increase productivity in future-oriented sectors [@mazzucato2013; @rodrik2004]. Evidence from countries like Germany, China, and South Korea shows that well-designed GIPs can enhance both competitiveness and environmental performance [@altenburg2012]. Additionally, by internalizing environmental externalities (e.g., via carbon pricing or pollution regulation), GIPs help correct market failures that would otherwise inhibit the development of green sectors [@meckling2015].
+
+Furthermore, the **macroeconomic benefits** of green industrial transformation are becoming increasingly evident. Investments in renewable energy, energy efficiency, and clean infrastructure generate more jobs per dollar spent compared to fossil fuel-based industries [@ilo2018]. According to the ILO, the global shift to a greener economy could create 24 million new jobs by 2030, offsetting job losses in high-carbon sectors [@ilo2018]. GIPs thus offer a powerful tool not just for decarbonizing economies, but also for addressing unemployment, inequality, and regional economic disparities.
+
+Lastly, green industrial policies are also a matter of **economic resilience and strategic competitiveness**. As countries increasingly adopt climate regulations, firms that fail to transition may lose access to key markets or face carbon border adjustments. Countries that lead in green technologies will not only set environmental standards but also dominate emerging green value chains [@zhang2017; @perez2010]. Therefore, green industrial transformation is not just an environmental imperative—it is an economic strategy for long-term competitiveness, stability, and prosperity.
+
+## What Is a Replication Study?
+
+Replication studies are a fundamental component of the scientific method and serve as an essential mechanism for verifying and validating previously published research findings. In simple terms, a **replication study** involves repeating the analysis of a prior study using the same data, methods, and theoretical assumptions to determine whether the same results can be obtained [@camerer2016]. The goal of replication is not to challenge or discredit the original research, but rather to **test the reliability, transparency, and robustness** of its conclusions.
+
+There are different forms of replication. A **pure (or direct) replication** attempts to mirror the original work as closely as possible, using the same datasets, model specifications, and analytical procedures. An **independent (or conceptual) replication**, by contrast, might test the same hypotheses but use alternative methods, data sources, or analytical techniques to examine generalizability. Both are crucial to building cumulative knowledge and ensuring that results are not merely artifacts of specific contexts or errors.
+
+In the context of economics and policy research, replication has become increasingly important as studies often inform real-world decisions with substantial economic, environmental, and social implications. Reproducibility has come under particular scrutiny in economics, leading to greater emphasis on **open data, code sharing, and transparent research practices**. Journals like the *American Economic Review* and platforms such as the AEA’s Data and Code Repository now often require authors to submit replication files to allow others to verify their work.
+
+This project constitutes a **replication study** of Nathan Lane’s widely cited 2022 paper, *“The Political Economy of Industrial Policy”*. The paper investigates the determinants and effects of industrial policy using a global panel dataset and advanced empirical methods. As part of our replication effort, we focus on reproducing the **three key figures** from the original paper that illustrate its most important findings. These figures play a central role in visualizing the relationships between political incentives, industrial policy, and economic outcomes. By re-executing the original code and analysis in **R**, we aim not only to validate the robustness of the results but also to better understand the methodological design and empirical framework used in the study.
+
+Moreover, this replication exercise offers a valuable educational experience. It allows us to engage deeply with real-world policy data and econometric techniques, assess the reproducibility of influential research, and contribute—however modestly—to the broader culture of scientific integrity. Whether the results match the original exactly or reveal discrepancies, the replication process generates insights that are useful for both scholars and policymakers.
+
+## 3.1 Objectives
+
+The main objective of this report is to carry out a **systematic replication study** of selected results from the paper *“The Political Economy of Industrial Policy”* by Réka Juhász and Nathan Lane (2024). Specifically, our group seeks to **replicate three of the most central and illustrative figures** from the paper, using the original datasets and methodological guidance provided by the authors. The replication process will be executed in **R**, with a focus on transparency, reproducibility, and methodological rigor.
+
+This replication serves three primary purposes:
+
+1. **To verify the reproducibility** of key empirical results published in the original study;
+2. **To develop a better understanding** of the data construction, classification, and transformation procedures used in political economy research on industrial policy;
+3. **To critically assess any discrepancies** between our replication results and those presented in the original paper, considering potential sources such as software differences, missing data, or undocumented transformations.
+
+### Overview of the Original Study
+
+Juhász and Lane (2024) investigate the political economy underpinnings of modern industrial policy, offering a conceptual framework that explains why industrial policies — particularly green industrial policies — have re-emerged as prominent tools of statecraft despite their controversial history in economic thought. The authors argue that **political constraints** (such as time inconsistency, lobbying pressure, and electoral cycles) and **state capacity** (including administrative strength and bureaucratic autonomy) jointly shape the selection, design, and implementation of industrial policy interventions.
+
+A central empirical contribution of the paper is the construction and use of a **comprehensive global dataset** on industrial policy measures. This dataset builds on earlier work by Juhász, Lane, and Rodrik (2022), which utilizes **natural language processing (NLP)** and supervised machine learning techniques to classify industrial policy interventions extracted from the **Global Trade Alert (GTA)** database. By linking this dataset to a range of country-level political and institutional indicators, the authors explore not only where and how industrial policies are used, but also **why certain policy types — especially green industrial policies — are favored over others**, such as carbon taxation, even when they may be less efficient from a purely economic perspective.
+
+The paper’s empirical findings are presented through a series of informative figures and regressions that illustrate the nature, frequency, and institutional context of industrial policy implementation across countries and over time. These visualizations offer an accessible and policy-relevant way of communicating complex patterns and political mechanisms.
+
+### Replication Objectives
+
+Our replication effort centers on **reproducing three key figures** from the original publication:
+
+1. **Figure 1** – *Green Industrial Policy Activity in G20 Countries, 2010–2022*  
+   This figure provides a time-series view of the adoption of green industrial policy measures across the G20 countries.
+
+2. **Figure 2** – *Top Five Green Industrial Policy Instruments across G20 Economies*  
+   This figure identifies the most commonly used green industrial policy tools, categorized by instrument type.
+
+3. **Figure 3** – *Share of Autonomous Agencies Deploying Industrial Policies in G20 Countries*  
+   This figure links institutional features — specifically bureaucratic autonomy — to patterns of industrial policy deployment.
+
+Our goal is to replicate these figures as faithfully as possible, based on the data and code that were made available by the original authors, or reconstructed from the methodology described in the paper and associated supplementary materials.
+
+### Data and Replication Process
+
+We will use the **original datasets** compiled by the authors, including the industrial policy dataset based on the **Global Trade Alert (GTA)** database. Where possible, we will document the structure and variables of the raw datasets and describe the **data cleaning and transformation steps** necessary to arrive at the final analytical dataset used in the paper. These steps may include filtering for specific countries (e.g., G20 economies), selecting time periods, classifying policy types, and aggregating events by sector, policy tool, or institutional characteristic.
+
+We will also perform **side-by-side comparisons** of our replicated figures with the original ones to evaluate accuracy, highlight any discrepancies, and reflect on their causes. These comparisons may involve both visual (e.g., plot structure, trends) and numerical (e.g., frequency counts, shares) components.
+
+In doing so, we aim to answer the following questions:
+
+- Do our replicated figures match the originals in terms of trends and values?
+- If not, what might explain the divergence (e.g., software versions, data changes, transformation assumptions)?
+- What insights does the replication process provide about the construction and communication of political economy evidence?
+
+### Broader Learning Objective
+
+Beyond replication, this project offers our group the opportunity to engage directly with cutting-edge methods in political economy and industrial policy research. It reinforces the importance of open science, data documentation, and critical reading of empirical work. By working through real-world data and empirical models, we aim to not only validate published findings but also strengthen our own skills in empirical policy analysis.
+
+
 
 # Main Body
 
