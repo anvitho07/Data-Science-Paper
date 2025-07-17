@@ -29,8 +29,8 @@ duedate: "XXX January 13, 2026 XXX"
 nondisclosure: false
 nondisclosuredate: "January 1, 2076"
 
-#bibliography: "literatur.bib"
-#csl: "https://www.zotero.org/styles/deutsche-gesellschaft-fur-psychologie"
+bibliography: "literatur.bib"
+csl: "https://www.zotero.org/styles/deutsche-gesellschaft-fur-psychologie"
 
 format:
     apaquarto-pdf:
@@ -167,7 +167,183 @@ Text Text Text Text Text Text Text Text Text Text Text Text Text see @tbl-someth
 
 : An Example Table Created With Markdown {#tbl-something apa-note="Here is a note."}
 
-## Another Heading
+### replication of figure 3
+To replicate the study, I began by carefully studying the available Stata code provided by the original authors. This included examining the sequence of operations, the structure of the dataset, and the key functions used for data cleaning, transformation, and visualization. I paid close attention to how variables such as merit, label, and share autonomous were used, particularly in the construction of the final graphs.
+
+After gaining a working understanding of the Stata code, I used AI assistance to help me translate the Stata code into R. I provided the AI with the original code, explained the intended outputs where necessary, and received an initial draft of R code. This translation step was crucial in bridging the gap between the two programming environments, especially given the differences in syntax and available libraries.
+
+I then executed the R code and inspected the outputs, particularly the generated plots. Initially, the visualizations did not match the expected results. This prompted a detailed debugging process, where I backtraced the steps in the code to identify the source of the discrepancies. The issue was ultimately not in the data manipulation itself, but rather in the visualization details—specifically the ordering of categories and the color assignments in the plots.
+
+To resolve this, I revisited the R code and made targeted adjustments to the factor levels and color mappings. These changes aligned the output more closely with the intended visual representation. Throughout this process, running the original Stata code served as a reference point, helping me better understand how the final structure and presentation of the data should look, even though I did not directly compare the full datasets.
+
+In summary, my replication approach combined code analysis, AI-supported translation, iterative testing, and detailed troubleshooting, with a focus on understanding and resolving visualization inconsistencies in the R implementation.
+
+## used code for figure 3
+
+```{r}
+#| label: fig 3
+#| echo: true
+# Install required packages if missing
+if (!require("haven")) install.packages("haven")
+if (!require("dplyr")) install.packages("dplyr")
+if (!require("ggplot2")) install.packages("ggplot2")
+
+# Load packages
+library(haven)
+library(dplyr)
+library(ggplot2)
+
+# Download dataset
+url <- "https://github.com/anvitho07/Data-science-presentation-final/raw/refs/heads/main/dataset_for_autonomousorgs_G20.dta"
+temp_file <- tempfile(fileext = ".dta")
+download.file(url, temp_file, mode = "wb")
+
+# Load dataset
+data <- read_dta(temp_file)
+
+# Create share autonomous by meritocracy quantile
+merit_var <- grep("merit|quant|recruit|bureau", names(data), 
+                  value = TRUE, ignore.case = TRUE)[1]
+
+if (!is.na(merit_var)) {
+  cat("Using variable:", merit_var, "\n")
+} else {
+  stop("No meritocracy quantile variable found. Available variables:\n", 
+       paste(names(data), collapse = ", "))
+}
+
+collapsed_data <- data %>%
+  group_by(!!sym(merit_var)) %>%
+  summarize(ShareAutonomous = mean(ShareAutonomous, na.rm = TRUE)) %>%
+  mutate(ShareAutonomous = round(ShareAutonomous, 2),
+         MeritLabel = factor(!!sym(merit_var), 
+                             levels = c(1, 2), 
+                             labels = c("Low", "High")))
+
+# Create horizontal bar plot with decimal formatting
+ggplot(collapsed_data, 
+       aes(x = MeritLabel, 
+           y = ShareAutonomous)) +
+  geom_col(fill = "steelblue", alpha = 0.25, width = 0.6) +
+  geom_text(aes(label = sprintf("%.2f", ShareAutonomous)), 
+            size = 4, hjust = -0.2) +  # Decimal formatting with 2 digits
+  coord_flip() +  # Make bars horizontal
+  labs(x = "Meritocratic recruitment", 
+       y = "Share of autonomous agencies deploying industrial policy") +
+  scale_y_continuous(limits = c(0, max(collapsed_data$ShareAutonomous) * 1.2),
+                     expand = c(0, 0),
+                     breaks = seq(0, 1, 0.2)) +  # Standard decimal breaks
+  theme_minimal() +
+  theme(
+    axis.title.y = element_text(size = 12, margin = margin(r = 15)),
+    axis.title.x = element_text(size = 12, margin = margin(t = 10)),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    plot.margin = margin(1, 1, 1, 1, "cm")
+  )
+
+# Create output directory if not exists
+if (!dir.exists("output")) dir.create("output")
+
+# Export figure
+ggsave("output/figure3_AutonomousIP_Bureaucracy.pdf", 
+       width = 8, height = 4, units = "in")
+
+
+```
+
+## Explanation of the code in steps
+Step-by-Step Explanation of the R Code
+Install and Load Required Packages
+
+The first part of the code checks if the necessary R packages are installed (haven, dplyr, ggplot2, forcats). If a package is missing, it is installed. Then, all four packages are loaded using library():
+
+haven: used to import Stata .dta files.
+
+dplyr: for data manipulation.
+
+ggplot2: for creating the plot.
+
+forcats: for manipulating factor (categorical) variables.
+
+Download and Load the Dataset
+
+A temporary file is created to store the dataset, which is downloaded directly from a GitHub repository. The dataset is a Stata file (.dta), and it is loaded into R using read_dta() from the haven package. This dataset includes information on autonomous agencies and their relationship to meritocratic recruitment.
+
+Identify the Meritocracy Variable
+
+The script attempts to identify a variable related to meritocracy quantiles using a keyword search (grep) through the variable names. It looks for terms like "merit", "quant", "recruit", or "bureau" (case-insensitive). The first matching variable is selected and stored as merit_var.
+
+Group and Summarize Data
+
+Using the identified merit_var, the dataset is grouped by that variable. Then, for each group, the mean of the ShareAutonomous variable is calculated using summarize(). This gives the average share of autonomous agencies for each meritocracy level.
+
+The result is stored in collapsed_data, and two transformations are applied:
+
+The ShareAutonomous values are rounded to two decimal places.
+
+The merit_var variable is converted to a factor labeled "Low" and "High" (assuming two levels), and then reversed using fct_rev() so that "Low" appears above "High" in the plot.
+
+Create a Horizontal Bar Plot
+
+A horizontal bar plot is created using ggplot2:
+
+The x-axis shows the meritocracy level (Low and High), and the y-axis shows the average share of autonomous agencies.
+
+The bars are filled with a lavender color (#E6E6FA) and outlined with a darker purple (#9370DB).
+
+Text labels are added to each bar showing the precise value.
+
+The coord_flip() function flips the axes to make it horizontal.
+
+A clean minimal theme is applied, with axis titles, customized margins, and color adjustments for clarity and visual appeal.
+
+Set Output Directory and Export the Plot
+
+Before saving the plot, the script checks whether a folder called output exists. If it doesn’t, it creates the folder using dir.create(). Finally, the plot is saved as a PDF named figure3_AutonomousIP_Bureaucracy.pdf inside that folder using ggsave().
+
+## used packages
+
+1. haven
+Purpose: The haven package is part of the tidyverse ecosystem and is specifically designed to read and write data files from statistical software like Stata (.dta), SPSS, and SAS.
+
+Application in This Study: In this project, haven::read_dta() was used to import the Stata dataset (.dta file) directly into R while preserving variable labels and data structures. This enabled seamless access to the original data used in the Stata version of the analysis.
+
+2. dplyr
+Purpose: dplyr is a grammar of data manipulation that provides fast, readable, and consistent functions for transforming data frames (also part of the tidyverse).
+
+Application in This Study:
+
+group_by() was used to group the data by meritocracy level.
+
+summarize() was employed to calculate the mean of the ShareAutonomous variable.
+
+mutate() was used to round numerical values, create labeled factors, and modify variable formats for plotting.
+
+The use of !!sym(merit_var) allowed for dynamic evaluation of a variable name stored as a string, which is useful when working with automatically detected variables.
+
+3. ggplot2
+Purpose: ggplot2 is a widely used data visualization package based on the Grammar of Graphics, which allows users to create complex, multi-layered plots through a structured and intuitive syntax.
+
+Application in This Study:
+
+The bar plot was constructed using geom_col(), which creates bars with heights proportional to the values of ShareAutonomous.
+
+geom_text() added value labels to each bar.
+
+coord_flip() rotated the plot horizontally to enhance readability.
+
+A custom color scheme and theme adjustments were applied to match the style of the original visual in the Stata version.
+
+scale_y_continuous() controlled the y-axis scale and spacing, ensuring clarity in the plotted data.
+
+4. forcats
+Purpose: forcats (short for "factor categorical variables") provides tools for working with factor variables in R. It simplifies reordering, relabeling, and reversing factor levels—essential for effective categorical plotting.
+
+Application in This Study:
+
+The fct_rev() function was used to reverse the order of the factor levels of MeritLabel, placing “Low” above “High” in the horizontal bar chart. This was necessary to match the presentation style used in the original graph.
+
 
 Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
 
