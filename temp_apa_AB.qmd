@@ -16,11 +16,11 @@ thesistype: "XXX Bachelor’s/Master’s Thesis XXX"
 studyprogram: "XXX Bachelor of Arts (B.A.)/Bachelor of Laws (LL.B.)/Bachelor of Science (B.Sc.)/Master of Arts (M.A.)/Master of Business Administration (MBA)/Master of Science (M.Sc.) XXX"
 
 author:
-  - name: Anvith Amin
+  - name: Anvith Amin , Abdalla, Manjunath
     affiliations:
       city: Cologne
     corresponding: true
-studentid: "XXX"
+studentid: "123,456,890"
 examiner1: Prof. Dr. XXX
 examiner2: Prof. Dr. XXX
 
@@ -62,7 +62,7 @@ lang: en
 \clearpage
 
 # Introduction
-## Introduction: Green Industrial Policies – Redefining Growth for a Sustainable Future
+### Introduction: Green Industrial Policies – Redefining Growth for a Sustainable Future
 
 As the global community faces intensifying climate change, environmental degradation, and socio-economic disruptions, the need for a new development paradigm has never been more urgent. Traditional models of industrialization, often centered around fossil fuel dependency and resource-intensive growth, are increasingly incompatible with the sustainability goals outlined in international agreements such as the Paris Climate Accord and the United Nations Sustainable Development Goals (UN SDGs) [@unfccc2015; @un2015]. In this context, **Green Industrial Policies (GIPs)** have gained prominence as a strategic framework to drive both environmental and economic transformation.
 
@@ -76,7 +76,7 @@ Despite the promise of GIPs, their implementation is fraught with challenges. Fi
 
 In sum, Green Industrial Policies represent a vital and ambitious effort to reshape the industrial foundations of modern economies. By integrating environmental sustainability into industrial development, GIPs offer a way to harmonize climate action with economic resilience. Yet their success depends on strategic governance, adaptive institutions, and the careful design of supportive and accountable policy instruments.
 
-## Why Green Industrial Policies Matter – Globally and Economically
+### Why Green Industrial Policies Matter – Globally and Economically
 
 The growing urgency of the climate crisis, biodiversity loss, and unsustainable resource use has made the need for green transitions not just desirable but indispensable. **Green Industrial Policies (GIPs)** are critical because they offer a systemic approach to reshaping economic activity in ways that align with global sustainability goals. At a global level, GIPs are central to meeting the targets of the **Paris Agreement** and the **UN Sustainable Development Goals (SDGs)**, particularly those related to climate action, clean energy, sustainable industry, and responsible consumption [@unfccc2015; @un2015]. Without structural changes in production and industrial systems, it will be impossible to decouple economic growth from carbon emissions and ecological degradation.
 
@@ -88,7 +88,7 @@ Furthermore, the **macroeconomic benefits** of green industrial transformation a
 
 Lastly, green industrial policies are also a matter of **economic resilience and strategic competitiveness**. As countries increasingly adopt climate regulations, firms that fail to transition may lose access to key markets or face carbon border adjustments. Countries that lead in green technologies will not only set environmental standards but also dominate emerging green value chains [@zhang2017; @perez2010]. Therefore, green industrial transformation is not just an environmental imperative—it is an economic strategy for long-term competitiveness, stability, and prosperity.
 
-## What Is a Replication Study?
+### What Is a Replication Study?
 
 Replication studies are a fundamental component of the scientific method and serve as an essential mechanism for verifying and validating previously published research findings. In simple terms, a **replication study** involves repeating the analysis of a prior study using the same data, methods, and theoretical assumptions to determine whether the same results can be obtained [@camerer2016]. The goal of replication is not to challenge or discredit the original research, but rather to **test the reliability, transparency, and robustness** of its conclusions.
 
@@ -100,7 +100,7 @@ This project constitutes a **replication study** of Nathan Lane’s widely cited
 
 Moreover, this replication exercise offers a valuable educational experience. It allows us to engage deeply with real-world policy data and econometric techniques, assess the reproducibility of influential research, and contribute—however modestly—to the broader culture of scientific integrity. Whether the results match the original exactly or reveal discrepancies, the replication process generates insights that are useful for both scholars and policymakers.
 
-## 3.1 Objectives
+# Objectives
 
 The main objective of this report is to carry out a **systematic replication study** of selected results from the paper *“The Political Economy of Industrial Policy”* by Réka Juhász and Nathan Lane (2024). Specifically, our group seeks to **replicate three of the most central and illustrative figures** from the paper, using the original datasets and methodological guidance provided by the authors. The replication process will be executed in **R**, with a focus on transparency, reproducibility, and methodological rigor.
 
@@ -342,10 +342,214 @@ Purpose: forcats (short for "factor categorical variables") provides tools for w
 
 Application in This Study:
 
-The fct_rev() function was used to reverse the order of the factor levels of MeritLabel, placing “Low” above “High” in the horizontal bar chart. This was necessary to match the presentation style used in the original graph.
+The fct_rev() function was used to reverse the order of the factor levels of MeritLabel, placing “Low” above “High” in the horizontal bar chart. This was necessary to match thgit add temp_apa_yourpart.qmde presentation style used in the original graph.
 
+### lessons learned
 
-Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
+#### 0_0_extract_rawdata
+This Stata code processes a dataset (JLOP_2022.dta) to create a cleaned and filtered version called IP_G20.dta, focusing on industrial policy (IP) measures by G20 countries from 2010 to 2022. The key steps are:
+
+Data Cleaning & Filtering: It keeps only relevant variables, filters the data for years 2010–2022, and restricts the dataset to measures announced by G20 countries. It also filters to include only observations classified as industrial policy (D_IP_bert_3 == 1).
+
+Country Name Standardization: It uses the kountry package to standardize country names and filters to retain only G20 members.
+
+Text Tokenization: It cleans the text in the MeasureDescription field (lowercase, removes punctuation) and searches for green policy keywords (like “renewable”, “solar”, “electric vehicle”). Detected terms are stored in a new variable MeasureDescriptionTokens.
+
+Variable Renaming and Labeling: Several variables are renamed for clarity and labeled for documentation.
+
+Saving Output: The cleaned dataset is saved as IP_G20.dta for further analysis
+#### 1_1_create_greenIP
+This Stata script builds on the cleaned dataset IP_G20.dta to create a new indicator variable identifying green industrial policies. Here's what it does, step by step:
+
+Load & De-duplicate Data:
+The code loads the IP_G20.dta dataset and drops duplicate rows based on MeasureID to ensure each policy is uniquely represented.
+
+Text Cleaning:
+It cleans the StateActTitle variable by converting it to lowercase and removing punctuation and symbols, preparing it for keyword matching.
+
+Generate Green Policy Indicator:
+A new variable GreenIP is created and initialized to 0. Then, using a list of green-related keywords (like "renewable", "solar", "carbon neutral", etc.), the code sets GreenIP to 1 if any of these phrases appear in either MeasureDescriptionTokens or StateActTitle.
+
+Save Output:
+The modified dataset, with the new GreenIP variable, is saved as IP_G20_withgreenIP.dta for further analysis.
+
+#### 1_2_create_highincome
+
+This Stata script processes World Bank income classification data to create a binary indicator variable identifying whether a G20 country was considered “high-income” in 2010. The final dataset is saved as highincome.dta. Here’s a breakdown:
+
+ Steps in the Code:
+Data Import and Cleanup:
+
+Loads income classification data from an Excel file (wb.xlsx).
+
+Drops unnecessary columns and rows, including note entries and formatting artifacts from Excel.
+
+Variable Renaming:
+
+The year columns (like C, D, etc.) are renamed using the year values in their first row, e.g., IncomeGroup2010.
+
+Standardize Country Names:
+
+Uses the kountry package to convert ISO3 country codes into standardized country names (CountryStd).
+
+G20 Filter:
+
+Retains only G20 countries for analysis.
+
+Reshape Data:
+
+Converts the data from wide to long format, resulting in one row per country-year with the income group classification.
+
+Focus on Year 2010:
+
+Filters to only keep the classification for the year 2010.
+
+Create Binary High-Income Variable:
+
+Sets HighIncome = 1 for countries classified as “H” (High Income).
+
+Sets HighIncome = 0 for “LM” (Lower Middle) or “UM” (Upper Middle).
+
+Converts this into a numeric variable and labels it.
+
+Save Result:
+
+Saves the processed dataset (highincome.dta) for use in further merges or analysis.
+
+#### 1_3_merge_greenIP_highincome
+
+This short Stata script merges two intermediate datasets into a single final dataset that can be used for analysis of green industrial policy (GreenIP) with a focus on countries’ income levels.
+
+Steps in the Code:
+Load Green IP Data:
+Loads the dataset (IP_G20_withgreenIP.dta) that includes a binary indicator for whether a policy is “green.”
+
+Merge with Income Data:
+Merges the green IP data with the high-income indicator dataset (highincome.dta) using a many-to-one (m:1) merge based on the standardized country name (CountryStd).
+
+The expectation is that each country appears once in the income data (since it's from 2010), but multiple times in the green IP data (many policies per country).
+
+Check Merge Success:
+Ensures that all records matched perfectly (i.e., _merge == 3 for all observations). If so, _merge is dropped.
+
+Save Final Dataset:
+The resulting dataset, now containing both green policy and income status information, is saved as dataset_for_greenIP_G20.dta.
+This step prepares a complete dataset to analyze whether high-income G20 countries are more likely to implement green industrial policies by merging policy-level data with country-level income classifications.
+
+#### 1_4_create_share_autonomous
+
+This Stata script creates a country-level variable that captures the share of autonomous organizations responsible for deploying industrial policy in each G20 country. The final output is saved for further analysis.
+
+ Step-by-Step Overview:
+Load the Raw Dataset:
+Loads IP_G20.dta, which contains detailed policy-level data including organization names and whether they are autonomous (Autonomous variable).
+
+Filter Out Missing Organizations:
+Drops rows where no implementing organization is identified—since Autonomous can't be defined for these.
+
+De-duplicate by Country and Organization:
+Keeps only unique combinations of CountryStd and Organization, ensuring that each organization is counted only once per country.
+
+Calculate Share of Autonomous Organizations:
+For each country, it calculates the mean of the Autonomous variable—this works because Autonomous is a binary variable (1 if autonomous, 0 otherwise), so the mean is effectively the proportion of autonomous organizations.
+
+Collapse to Country-Level:
+Keeps just two columns: the country name and the calculated share (ShareAutonomous), producing one row per country.
+
+Save Output:
+Saves the summarized dataset as IP_Organization_shAutonomous.dta.
+To generate a summary metric showing the extent of organizational independence in industrial policy deployment by country, which can be used in later comparative or regression analysis.
+
+#### 1_5_create_meritocratic
+
+This Stata script processes V-Dem data to create a simplified, quantile-based measure of meritocratic recruitment for G20 countries, focusing on the year 2010. It saves the result as a ready-to-merge dataset.
+
+ Step-by-Step Breakdown:
+Load and Rename Data:
+Imports the variable v2stcritrecadm (which measures the meritocratic nature of bureaucratic recruitment) from vdem.dta and renames it to MeritRecruitment for clarity.
+
+Filter for Year 2010:
+Keeps only rows from 2010, as the study focuses on that year, and drops the year variable afterward.
+
+Standardize Country Names:
+Uses the kountry package to standardize country names to match across datasets. Also manually corrects "türkiye" to "Turkey" for consistency.
+
+Filter to G20 Countries:
+Retains only rows corresponding to G20 members.
+
+Create Quantile-Based Indicator:
+
+Uses egen ... xtile() to divide the MeritRecruitment values into two quantile groups (top and bottom 50%).
+
+The resulting variable MeritRecruitment_quantile has values 1 (low meritocracy) or 2 (high meritocracy).
+
+Clean and Save:
+Drops the original continuous MeritRecruitment score and saves only the quantile-based indicator in MeritocraticRecruitment.dta.
+This script prepares a binary variable indicating whether a G20 country had a high or low level of merit-based recruitment in public administration in 2010, to be used later in merged policy datasets or regressions.
+
+#### 1_6_merge_sh_autonomous_meritocratic
+
+This script merges two intermediate datasets—one on the share of autonomous organizations involved in industrial policy, and the other on meritocratic recruitment levels—into a single country-level dataset for the G20 countries.
+
+Step-by-Step Breakdown:
+Load Dataset on Organizational Autonomy:
+Loads IP_Organization_shAutonomous.dta, which contains the variable ShareAutonomous representing the proportion of autonomous organizations deploying industrial policy in each G20 country.
+
+Merge with Meritocracy Data:
+Performs a 1:1 merge with MeritocraticRecruitment.dta on CountryStd, adding the binary quantile-based meritocracy indicator (MeritRecruitment_quantile) to each country.
+
+Check Merge Quality:
+Asserts that all 19 G20 countries matched perfectly (_merge == 3) and removes the _merge variable afterward.
+
+Save Final Country-Level Dataset:
+Saves the merged dataset as dataset_for_autonomousorgs_G20.dta, which can now be used to analyze the relationship between autonomy and meritocracy.
+To combine information about bureaucratic autonomy and merit-based recruitment across G20 countries into one dataset for cross-country analysis, typically as predictors in later regression models or policy comparisons.
+
+#### 1_create_datasets_master
+This .do file (1_create_datsets_master.do) acts as a master script to sequentially run all the individual .do files in the code/1_create_datasets folder. These scripts prepare the core datasets used in the empirical analysis—particularly for Figures 1, 2, and 3 in the associated research.
+
+Step-by-Step Breakdown:
+Set the Path:
+Sets the local macro create to refer to the directory containing the dataset creation scripts.
+
+Run Dataset Creation Scripts for Figures 1 and 2:
+
+1_1_create_greenIP.do: Creates a green industrial policy indicator.
+
+1_2_create_highincome.do: Creates a high-income country indicator based on World Bank data.
+
+1_3_merge_greenIP_highincome.do: Merges the two above to form a dataset for analyzing green IPs by income level.
+
+Run Dataset Creation Scripts for Figure 3:
+
+1_4_create_share_autonomous.do: Computes the share of autonomous implementing organizations.
+
+1_5_create_meritocratic.do: Generates a binary measure of meritocratic recruitment using V-Dem data.
+
+1_6_merge_sh_autonomous_meritocratic.do: Merges the autonomy and meritocracy data into a final country-level dataset.
+This script automates the sequential execution of all dataset preparation steps, ensuring consistency and reproducibility across the full empirical pipeline. It prepares two main datasets:
+
+One for analysis of green industrial policy by income level (Figures 1 & 2).
+
+One for analysis of organizational autonomy and meritocracy across G20 countries (Figure 3).
+
+#### 2_analysis_master
+
+This script (2_analysis_master.do) acts as the master analysis script, automating the generation of visualizations (Figures 1, 2, and 3) based on the datasets prepared in earlier steps. It runs all the relevant .do files located in the code/2_analysis folder.
+
+ Step-by-Step Overview:
+Set File Path:
+Defines the macro analysis pointing to the folder code/2_analysis, where the figure-generating scripts are stored.
+
+Run Analysis Scripts:
+
+2_1_create_figure1.do: Generates Figure 1, likely based on green industrial policies.
+
+2_2_create_figure2.do: Generates Figure 2, probably comparing green IPs by income group.
+
+2_3_create_figure3.do: Generates Figure 3, which likely analyzes the relationship between autonomy and meritocracy in IP deployment.
+
+This master script ensures that all analysis figures are generated in sequence, pulling from the cleaned and merged datasets created earlier. It helps maintain a reproducible and modular analysis workflow, especially for replication or updates.
 
 # Conclusion
 
