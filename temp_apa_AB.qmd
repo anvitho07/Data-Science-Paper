@@ -52,6 +52,7 @@ lang: en
 
 # Abstract {.unnumbered}
 
+This paper presents a replication study of The Political Economy of Industrial Policy using R and R Markdown. The original analysis, conducted in Stata, is reproduced here with open-source tools to enhance transparency and accessibility. Alongside replicating key figures and tables, this work is framed as a learning journey in applying reproducible research methods and data science techniques. We share our experiences, challenges, and insights gained throughout the process to support others interested in replication studies and promote best practices in empirical political economy research.
 \newpage
 \thispagestyle{empty}
 \tableofcontents
@@ -344,7 +345,15 @@ Application in This Study:
 
 The fct_rev() function was used to reverse the order of the factor levels of MeritLabel, placing “Low” above “High” in the horizontal bar chart. This was necessary to match thgit add temp_apa_yourpart.qmde presentation style used in the original graph.
 
-### lessons learned
+### learnings and reflections
+
+This replication project was not only about reproducing results from an academic paper; it was also a personal learning journey. One of the biggest takeaways was learning R programming, especially using ggplot2, which proved to be one of the most powerful and essential tools for data visualization. I also explored a range of other important R functions for data manipulation, modeling, and reporting.
+
+Another key learning was developing patience with the iterative process. Getting everything to work as intended often took multiple attempts, debugging, and small adjustments, but this trial-and-error approach became an important part of the learning.
+
+Throughout the process, I also used different AI tools and websites, comparing their strengths and limitations. This helped me become more resourceful and strategic in how I searched for help and solved problems.
+
+If I were to give advice to my earlier self at the beginning of this project, it would be this: “Don’t overthink it; break the project into small chunks and take it one step at a time. It’s not as difficult as it seems once you get started.” This mindset shift made a huge difference in how I approached the work, and it's something I’ll carry forward into future projects.
 
 #### 0_0_extract_rawdata
 This Stata code processes a dataset (JLOP_2022.dta) to create a cleaned and filtered version called IP_G20.dta, focusing on industrial policy (IP) measures by G20 countries from 2010 to 2022. The key steps are:
