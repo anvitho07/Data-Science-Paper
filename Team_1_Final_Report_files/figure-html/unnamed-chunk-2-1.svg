@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='468.00pt' height='468.00pt' viewBox='0 0 468.00 468.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw0NjguMDB8MC4wMHw0NjguMDA='>
+    <rect x='0.00' y='0.00' width='468.00' height='468.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw0NjguMDB8MC4wMHw0NjguMDA=)'>
+</g>
+<defs>
+  <clipPath id='cpNzcuNzJ8NDU4LjA0fDkuOTZ8MzQ5Ljgy'>
+    <rect x='77.72' y='9.96' width='380.31' height='339.86' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNzcuNzJ8NDU4LjA0fDkuOTZ8MzQ5Ljgy)'>
+<rect x='306.67' y='48.58' width='30.27' height='108.14' style='stroke-width: 0.19; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #4059AD;' />
+<rect x='274.50' y='48.58' width='32.17' height='108.14' style='stroke-width: 0.19; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #332288;' />
+<rect x='217.74' y='48.58' width='56.76' height='108.14' style='stroke-width: 0.19; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #88CCEE;' />
+<rect x='106.10' y='48.58' width='111.63' height='108.14' style='stroke-width: 0.19; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #F4B942;' />
+<rect x='77.72' y='48.58' width='28.38' height='108.14' style='stroke-width: 0.19; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #D1495B;' />
+<rect x='77.72' y='48.58' width='0.00' height='108.14' style='stroke-width: 0.19; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #9467BD;' />
+<rect x='77.72' y='48.58' width='0.00' height='108.14' style='stroke-width: 0.19; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;' />
+<rect x='238.84' y='203.07' width='159.30' height='108.14' style='stroke-width: 0.19; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #4059AD;' />
+<rect x='238.84' y='203.07' width='0.00' height='108.14' style='stroke-width: 0.19; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #332288;' />
+<rect x='238.84' y='203.07' width='0.00' height='108.14' style='stroke-width: 0.19; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #88CCEE;' />
+<rect x='164.93' y='203.07' width='73.91' height='108.14' style='stroke-width: 0.19; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #F4B942;' />
+<rect x='123.97' y='203.07' width='40.96' height='108.14' style='stroke-width: 0.19; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #D1495B;' />
+<rect x='104.85' y='203.07' width='19.12' height='108.14' style='stroke-width: 0.19; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #9467BD;' />
+<rect x='77.72' y='203.07' width='27.13' height='108.14' style='stroke-width: 0.19; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;' />
+</g>
+<g clip-path='url(#cpMC4wMHw0NjguMDB8MC4wMHw0NjguMDA=)'>
+<text x='72.34' y='260.57' text-anchor='end' style='font-size: 9.60px;fill: #4D4D4D; font-family: "Arial";' textLength='53.85px' lengthAdjust='spacingAndGlyphs'>High-income</text>
+<text x='72.34' y='106.09' text-anchor='end' style='font-size: 9.60px;fill: #4D4D4D; font-family: "Arial";' textLength='62.38px' lengthAdjust='spacingAndGlyphs'>Middle-income</text>
+<polyline points='77.72,349.82 458.04,349.82 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='77.72,352.81 77.72,349.82 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='153.79,352.81 153.79,349.82 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='229.85,352.81 229.85,349.82 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='305.91,352.81 305.91,349.82 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='381.97,352.81 381.97,349.82 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='458.04,352.81 458.04,349.82 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<text x='77.72' y='362.07' text-anchor='middle' style='font-size: 9.60px;fill: #4D4D4D; font-family: "Arial";' textLength='13.86px' lengthAdjust='spacingAndGlyphs'>0%</text>
+<text x='153.79' y='362.07' text-anchor='middle' style='font-size: 9.60px;fill: #4D4D4D; font-family: "Arial";' textLength='19.20px' lengthAdjust='spacingAndGlyphs'>20%</text>
+<text x='229.85' y='362.07' text-anchor='middle' style='font-size: 9.60px;fill: #4D4D4D; font-family: "Arial";' textLength='19.20px' lengthAdjust='spacingAndGlyphs'>40%</text>
+<text x='305.91' y='362.07' text-anchor='middle' style='font-size: 9.60px;fill: #4D4D4D; font-family: "Arial";' textLength='19.20px' lengthAdjust='spacingAndGlyphs'>60%</text>
+<text x='381.97' y='362.07' text-anchor='middle' style='font-size: 9.60px;fill: #4D4D4D; font-family: "Arial";' textLength='19.20px' lengthAdjust='spacingAndGlyphs'>80%</text>
+<text x='458.04' y='362.07' text-anchor='middle' style='font-size: 9.60px;fill: #4D4D4D; font-family: "Arial";' textLength='24.53px' lengthAdjust='spacingAndGlyphs'>100%</text>
+<text x='267.88' y='375.67' text-anchor='middle' style='font-size: 12.00px; font-family: "Arial";' textLength='275.51px' lengthAdjust='spacingAndGlyphs'>Share of green industrial policies by instrument type</text>
+<rect x='115.28' y='396.25' width='11.08' height='11.08' style='stroke-width: 0.19; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #4059AD;' />
+<rect x='194.63' y='396.25' width='11.08' height='11.08' style='stroke-width: 0.19; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #332288;' />
+<rect x='299.34' y='396.25' width='11.08' height='11.08' style='stroke-width: 0.19; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #88CCEE;' />
+<rect x='115.28' y='413.57' width='11.08' height='11.08' style='stroke-width: 0.19; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #F4B942;' />
+<rect x='194.63' y='413.57' width='11.08' height='11.08' style='stroke-width: 0.19; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #D1495B;' />
+<rect x='299.34' y='413.57' width='11.08' height='11.08' style='stroke-width: 0.19; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #9467BD;' />
+<rect x='115.28' y='430.89' width='11.08' height='11.08' style='stroke-width: 0.19; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #44AA99;' />
+<text x='132.47' y='404.66' style='font-size: 8.00px; font-family: "Arial";' textLength='52.49px' lengthAdjust='spacingAndGlyphs'>Financial grant</text>
+<text x='211.82' y='404.66' style='font-size: 8.00px; font-family: "Arial";' textLength='81.42px' lengthAdjust='spacingAndGlyphs'>Local content incentive</text>
+<text x='316.53' y='404.66' style='font-size: 8.00px; font-family: "Arial";' textLength='62.27px' lengthAdjust='spacingAndGlyphs'>Price stabilisation</text>
+<text x='132.47' y='421.98' style='font-size: 8.00px; font-family: "Arial";' textLength='36.04px' lengthAdjust='spacingAndGlyphs'>State loan</text>
+<text x='211.82' y='421.98' style='font-size: 8.00px; font-family: "Arial";' textLength='48.64px' lengthAdjust='spacingAndGlyphs'>Trade finance</text>
+<text x='316.53' y='421.98' style='font-size: 8.00px; font-family: "Arial";' textLength='104.08px' lengthAdjust='spacingAndGlyphs'>Fin. assist. in foreign markets</text>
+<text x='132.47' y='439.29' style='font-size: 8.00px; font-family: "Arial";' textLength='56.06px' lengthAdjust='spacingAndGlyphs'>Loan guarantee</text>
+</g>
+</svg>
